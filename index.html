@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorry Meskat 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://i.ibb.co/ZLJKsm8/bg.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/742/742751.png') no-repeat center;
+      background-size: contain;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    #text {
+      font-size: 18px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      min-height: 200px;
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+      font-style: italic;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 1s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="avatar"></div>
+    <div id="text"></div>
+    <div class="signature">[Created by APON]</div>
+  </div>
+
+  <script>
+    const message = `Sorry if I can't be like your past,
+Because... I am your future 🥺
+Please don't tell me about your past.
+The past you're telling me hurts me a lot.
+I want to plan my future with you.
+
+I Love You Meskat 🌺
+My darling,
+My love,
+I love you always 😍
+
+Never get bored, okay 🥰💗`;
+
+    const textContainer = document.getElementById("text");
+    let i = 0;
+
+    function typeText() {
+      if (i < message.length) {
+        textContainer.innerHTML = message.substring(0, i + 1) + '<span class="cursor">|</span>';
+        i++;
+        setTimeout(typeText, 40);
+      } else {
+        textContainer.innerHTML = message; // Remove cursor after done
+      }
+    }
+
+    window.onload = typeText;
+  </script>
+</body>
+</html>
